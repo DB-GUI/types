@@ -1,8 +1,4 @@
-import { Connection_record } from '../app_data'
-
-// 数据库连接配置
-export
-type Connection_config = Record<string, string | number | null>
+import { List_data_accessor, Connection_record } from '../app_data'
 
 // 插入、更新连接时的表单字段
 export
@@ -12,10 +8,17 @@ interface Connection_form_field {
   type: 'string' | 'number' | 'file'
 }
 
+// 与数据库的连接
 export
-interface Adapter {
+interface I_connection {
+
+}
+
+export
+interface Adapter<Connection_config, Connection extends I_connection> {
   key: string
   label: string
+
   ui: {
     connection: {
       upsert: {
@@ -23,4 +26,9 @@ interface Adapter {
       }
     }
   }
+  
+  get_conn(
+    accessor: List_data_accessor<Connection_record<Connection_config>>,
+    config: Connection_record<Connection_config>,
+  ): Connection
 }
