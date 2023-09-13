@@ -1,5 +1,3 @@
-import { List_data_accessor, Connection_record } from '../app_data'
-
 // 插入、更新连接时的表单字段
 export
 interface Connection_form_field {
@@ -11,7 +9,7 @@ interface Connection_form_field {
 // 与数据库的连接
 export
 interface I_connection {
-
+  
 }
 
 export
@@ -27,8 +25,5 @@ interface Adapter<Connection_config, Connection extends I_connection> {
     }
   }
   
-  get_conn(
-    accessor: List_data_accessor<Connection_record<Connection_config>>,
-    config: Connection_record<Connection_config>,
-  ): Connection
+  make_conn(config: Connection_config): Connection
 }
