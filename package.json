@@ -1,0 +1,26 @@
+{
+  "name": "@ppzp/dbgui_types",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DB-GUI/types.git"
+  },
+  "keywords": [
+    "ppz"
+  ],
+  "files": [
+    "./adapter/*",
+    "./app_data/*",
+    "./connection_view/*"
+  ],
+  "author": "ppz",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/DB-GUI/types/issues"
+  },
+  "homepage": "https://github.com/DB-GUI/types#readme",
+  "devDependencies": {
+    "@types/vscode": "^1.81.0"
+  }
+}
